@@ -27,25 +27,26 @@ const FrontPage = () => {
             history.push(`/jobs/${generatedKeywords}`);
             return;
           }
-        }
 
-        const newJobs = await fetchData("description", generatedKeywords);
-        if (newJobs === NO_JOBS_FOUND) {
-          history.push("/nojobfound");
-          return;
-        }
+          const newJobs = await fetchData("description", generatedKeywords);
+          if (newJobs === NO_JOBS_FOUND) {
+            history.push("/nojobfound");
+            return;
+          }
 
-        setJobs({ ...jobs, [generatedKeywords]: newJobs });
-        setIsLoading(false);
-        history.push(`/jobs/${generatedKeywords}`);
+          setJobs({ ...jobs, [generatedKeywords]: newJobs });
+          setIsLoading(false);
+          history.push(`/jobs/${generatedKeywords}`);
+        }
       }
+      history.push("/nojobfound");
     } catch (err) {
       console.error(err);
     }
   };
 
   return (
-    <div className="bg-gray-200 h-screen">
+    <div className="bg-black bg-opacity-75 h-screen flex flex-col justify-center">
       <Header />
       {!isLoading && (
         <SearchingForm handleSubmit={handleSubmit} descRef={descRef} />

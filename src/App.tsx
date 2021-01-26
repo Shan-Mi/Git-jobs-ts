@@ -5,10 +5,8 @@ import JobDetailPage from "./Pages/JobDetailPage";
 import JobsPage from "./Pages/JobsPage";
 import NoJobFound from "./Pages/NoJobFound";
 import Page404 from "./Pages/Page404";
-// import cx from 'classnames';
 
 function App() {
-
   return (
     <Switch>
       <Route path="/" exact component={FrontPage} />
