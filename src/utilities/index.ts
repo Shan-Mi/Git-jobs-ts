@@ -2,10 +2,12 @@
 //   [key: string]: T;
 // };
 
+import { Job } from "../constants";
+
 export const getOneJob = (
   jobtitle: string,
   id: string,
-  jobs: { [key: string]: [any] }
+  jobs: { [key: string]: Job[] }
 ) => jobs[jobtitle].filter((job) => job.id === id);
 
 export const generateKeywords = (val: string ) => {

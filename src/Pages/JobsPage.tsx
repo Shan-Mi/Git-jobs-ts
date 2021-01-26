@@ -1,11 +1,63 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from "react";
+import { useHistory, useRouteMatch } from "react-router-dom";
+import { fetchData } from "../Api";
+import JobListItem from "../Components/JobListItem";
+import { Job, NO_JOBS_FOUND } from "../constants";
+import JobsContext from "../context/JobsContext";
 
 const JobsPage = () => {
-  return (
-    <div>
-      This is jobsPage
-    </div>
-  )
-}
+  const { jobs, setJobs } = useContext(JobsContext);
+  const history = useHistory();
+  const [, , jobtitle] = history.location.pathname.split("/");
+  const { url } = useRouteMatch();
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentJobs, setCurrentJobs] = useState<Job[]>([]);
 
-export default JobsPage
+  useEffect(() => {
+    if (jobs) {
+      if (Object.keys(jobs).includes(jobtitle)) {
+        return setCurrentJobs(jobs[jobtitle]);
+      }
+
+      setIsLoading(true);
+      const fetchJobs = async () => {
+        try {
+          const newJobs = await fetchData("description", jobtitle);
+          setCurrentJobs(newJobs);
+          if (newJobs === NO_JOBS_FOUND) {
+            history.push("/nojobfound");
+            return;
+          }
+          setJobs({ [jobtitle]: currentJobs });
+          setIsLoading(false);
+        } catch (err) {
+          console.error(err);
+        }
+      };
+      fetchJobs();
+    }
+  }, [currentJobs, jobs, jobtitle, setJobs, history]);
+
+  return (
+    <>
+      <div>
+        <h1>
+          {isLoading
+            ? "Counting..."
+            : `${currentJobs.length} jobs as "${jobtitle}"
+          have been found:`}
+        </h1>
+      </div>
+      <button onClick={history.goBack}>Go back</button>
+      {isLoading && <p>Loading...</p>}
+      {!isLoading &&
+        currentJobs.map((job, index) => (
+          <div key={job.id}>
+            <JobListItem url={url} job={job} index={index} />
+          </div>
+        ))}
+    </>
+  );
+};
+
+export default JobsPage;
