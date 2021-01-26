@@ -1,1 +1,3 @@
-# This is a template for TypeScript and Tailwind
+# TS version with Tailwind
+
+*Under struction*
