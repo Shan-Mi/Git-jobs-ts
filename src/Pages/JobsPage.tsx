@@ -39,16 +39,20 @@ const JobsPage = () => {
   }, [currentJobs, jobs, jobtitle, setJobs, history]);
 
   return (
-    <>
-      <div className="bg-gray-200 h-screen">
-        <h1>
+    <div className="bg-black bg-opacity-75 h-screen">
+      <div className="">
+        <h1 className="text-pink-600 text-3xl text-center pt-4">
           {isLoading
             ? "Counting..."
             : `${currentJobs.length} jobs as "${jobtitle}"
           have been found:`}
         </h1>
       </div>
-      <button onClick={history.goBack}>Go back</button>
+      <button
+        className="bg-blue-100 px-2 my-5 rounded-md hover:bg-blue-200 hover:text-gray-50"
+        onClick={history.goBack}>
+        Go back
+      </button>
       {isLoading && <p>Loading...</p>}
       {!isLoading &&
         currentJobs.map((job, index) => (
@@ -56,7 +60,7 @@ const JobsPage = () => {
             <JobListItem url={url} job={job} index={index} />
           </div>
         ))}
-    </>
+    </div>
   );
 };
 
