@@ -1,21 +1,29 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
+import FrontPage from "./Pages/FrontPage";
+import JobDetailPage from "./Pages/JobDetailPage";
+import JobsPage from "./Pages/JobsPage";
+import NoJobFound from "./Pages/NoJobFound";
+import Page404 from "./Pages/Page404";
 // import cx from 'classnames';
 
 function App() {
-  const [toggle, setToggle] = React.useState<boolean>(false);
-  console.log("toggle", toggle);
 
-  const buttonClasses = toggle
-    ? "bg-red-500 hover:bg-red-500"
-    : "bg-blue-500 hover:bg-blue-500";
   return (
-    <div className="bg-gray-200 flex items-center justify-center h-screen">
-      <button
-        className={`p-3 rounded-sm ${buttonClasses}`}
-        onClick={() => setToggle(!toggle)}>
-        Toggle
-      </button>
-    </div>
+    <Switch>
+      <Route path="/" exact component={FrontPage} />
+      <Route
+        path="/jobs/:jobtitle"
+        render={({ match: { path } }) => (
+          <div>
+            <Route exact path={path} component={JobsPage} />
+            <Route path={`${path}/:id`} component={JobDetailPage} />
+          </div>
+        )}
+      />
+      <Route path="/nojobfound" component={NoJobFound} />
+      <Route path="*" component={Page404} />
+    </Switch>
   );
 }
 
