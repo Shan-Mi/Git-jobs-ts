@@ -8,7 +8,7 @@ interface Props {
 const SearchingForm = ({ handleSubmit, descRef }: Props) => (
   <div className=" flex items-center justify-center h-2/5 box-border">
     <form
-      className="bg-red-200 p-10 rounded-md h-3/6 box-border flex flex-col justify-around -mt-10  hover:shadow-md"
+      className="bg-red-400 p-10 rounded-md h-3/6 box-border flex flex-col justify-around -mt-10  hover:shadow-md"
       onSubmit={handleSubmit}>
       <label className="cursor-pointer" htmlFor="descption">
         Use <span className=" font-bold">SPACE</span> to input multiple keywords

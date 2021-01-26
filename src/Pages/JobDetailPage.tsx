@@ -40,14 +40,20 @@ const JobDetailPage = () => {
   }, [id, jobs, jobtitle]);
 
   return (
-    <>
+    <div className="bg-black bg-opacity-75 h-full">
       <header>
-        <h1>Job Type: {jobtitle}</h1>
-        <button onClick={handleClick}>{btnContent}</button>
+        <h1 className="text-pink-600 text-3xl text-center pt-4">
+          Job Type: {jobtitle}
+        </h1>
+        <button
+          className="bg-blue-100 px-2 ml-10 my-5 rounded-md hover:bg-blue-200 hover:text-gray-50"
+          onClick={handleClick}>
+          {btnContent}
+        </button>
       </header>
       {isLoading && <p>Loading...</p>}
       {!isLoading && <JobDetail job={job} />}
-    </>
+    </div>
   );
 };
 
