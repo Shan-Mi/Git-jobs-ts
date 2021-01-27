@@ -26,4 +26,5 @@ yarn-error.log*
 
 src/tailwind.output.css
 
-src/__snapshots__
+**/__snapshots__
+**/*/__snapshots__
