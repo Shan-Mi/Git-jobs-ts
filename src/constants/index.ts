@@ -21,6 +21,7 @@ export const URL =
   "https://jobs.github.com/positions/dcf7cacf-ac39-4e6e-a5df-83135f69cff0";
 
 export const JOB_OBJECT = {
+  id: "testid",
   type: "Full Time",
   url: "https://jobs.github.com/positions/dcf7cacf-ac39-4e6e-a5df-83135f69cff0",
   created_at: "Wed Jan 20 14:03:36 UTC 2021",
