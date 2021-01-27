@@ -25,3 +25,5 @@ yarn-error.log*
 .eslintcache
 
 src/tailwind.output.css
+
+src/__snapshots__
