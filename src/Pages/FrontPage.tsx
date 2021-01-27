@@ -38,6 +38,7 @@ const FrontPage = () => {
           setIsLoading(false);
           history.push(`/jobs/${generatedKeywords}`);
         }
+        return;
       }
       history.push("/nojobfound");
     } catch (err) {
