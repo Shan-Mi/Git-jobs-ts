@@ -1,10 +1,9 @@
 # TS version with Tailwind
 
-*Under struction*
+Convert old js version into ts, including tests.
 
-### 1. FrontPage is done
-### 2. All pages and components have been converted to TypeScript
-### 3. Styling ends, implemented googlefont, this part tests fine
+Implemented Tailwind for styling (very simple and basic, just for testing's purpose)
 
 TODO:
-### check @apply {}
+
+- check @apply {} (maybe only for components' level not for page?? to be checked)
