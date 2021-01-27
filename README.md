@@ -1,5 +1,7 @@
 # TS version with Tailwind
 
+![Front Page](./src/img/frontpage.png)
+
 ## Test code snippet
 - `yarn test src/Components/__test__/JobListItem.test.tsx`
 - `yarn test src/Components/__test__/JobDetail.test.tsx`
