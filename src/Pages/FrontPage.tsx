@@ -7,7 +7,7 @@ import { NO_JOBS_FOUND } from "../constants";
 import JobsContext from "../context/JobsContext";
 import { generateKeywords } from "../utilities";
 
-const FrontPage = () => {
+const FrontPage: React.FC = () => {
   const descRef = useRef<HTMLInputElement>(null);
   const { jobs, setJobs } = useContext(JobsContext);
   const [isLoading, setIsLoading] = useState(false);

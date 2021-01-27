@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-const Page404 = () => {
+const Page404: React.FC = () => {
   const history = useHistory();
   return (
     <div className="bg-black bg-opacity-75 h-screen flex flex-col justify-center items-center">

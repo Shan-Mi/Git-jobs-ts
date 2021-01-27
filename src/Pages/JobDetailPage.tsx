@@ -6,7 +6,7 @@ import { Job } from "../constants";
 import JobsContext from "../context/JobsContext";
 import { getOneJob } from "../utilities";
 
-const JobDetailPage = () => {
+const JobDetailPage: React.FC = () => {
   const { jobs } = useContext(JobsContext);
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();

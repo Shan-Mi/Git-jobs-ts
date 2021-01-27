@@ -5,7 +5,7 @@ import JobListItem from "../Components/JobListItem";
 import { Job, NO_JOBS_FOUND } from "../constants";
 import JobsContext from "../context/JobsContext";
 
-const JobsPage = () => {
+const JobsPage: React.FC = () => {
   const { jobs, setJobs } = useContext(JobsContext);
   const history = useHistory();
   const [, , jobtitle] = history.location.pathname.split("/");

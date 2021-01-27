@@ -6,7 +6,7 @@ import JobsPage from "./Pages/JobsPage";
 import NoJobFound from "./Pages/NoJobFound";
 import Page404 from "./Pages/Page404";
 
-function App() {
+const App: React.FC = () => {
   return (
     <Switch>
       <Route path="/" exact component={FrontPage} />
@@ -23,6 +23,6 @@ function App() {
       <Route path="*" component={Page404} />
     </Switch>
   );
-}
+};
 
 export default App;
