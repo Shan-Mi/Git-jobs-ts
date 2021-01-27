@@ -1,4 +1,4 @@
-# TS version with Tailwind
+# TypeScript version with Tailwind
 [Demo link](https://git-jobs-ts.web.app/)
 
 ![Front Page](./src/img/frontpage.png)
