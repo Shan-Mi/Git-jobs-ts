@@ -7,4 +7,9 @@ module.exports = {
       Potta: ["Potta One", "sans-serif"],
     },
   },
+  variants: {
+    extend: {
+      opacity: ["disabled"],
+    },
+  },
 };
