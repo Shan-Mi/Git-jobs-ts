@@ -6,7 +6,7 @@ import JobListItem from "../JobListItem";
 
 describe("Test for JobListItem component", () => {
   let JobListItemWrapper: any;
-  let count = 1;
+  let count = 0;
 
   beforeEach(() => {
     JobListItemWrapper = mount(

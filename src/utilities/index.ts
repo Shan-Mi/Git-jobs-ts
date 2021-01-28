@@ -1,7 +1,3 @@
-// type StrIndex<T> = {
-//   [key: string]: T;
-// };
-
 import { Job } from "../constants";
 
 export const getOneJob = (
@@ -10,7 +6,7 @@ export const getOneJob = (
   jobs: { [key: string]: Job[] }
 ) => jobs[jobtitle].filter((job) => job.id === id);
 
-export const generateKeywords = (val: string ) => {
+export const generateKeywords = (val: string) => {
   const regex = /\s+/;
   return val.trim().split(regex).sort().join("+");
 };
