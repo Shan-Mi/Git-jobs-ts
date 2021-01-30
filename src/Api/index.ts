@@ -1,7 +1,6 @@
 import axios from "axios";
 import { BASE_URL, Job, NO_JOBS_FOUND } from "../constants";
 
-// TODO: define job's interface
 export const fetchData = async (queryField: string, queryContent: string) => {
   try {
     const { data } = await axios.get(
